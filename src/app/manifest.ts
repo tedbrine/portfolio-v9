@@ -14,7 +14,7 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ["portfolio", "technology"],
     icons: [
       {
-        src: site.assets.figure,
+        src: site.assets.icon,
         sizes: "512x512",
         type: "image/jpeg",
       },

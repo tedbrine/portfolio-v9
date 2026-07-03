@@ -37,8 +37,8 @@ export function createMetadata({
     applicationName: site.name.full,
     category: "technology",
     icons: {
-      icon: site.assets.figure,
-      apple: site.assets.figure,
+      icon: site.assets.icon,
+      apple: site.assets.icon,
     },
     alternates: {
       canonical,

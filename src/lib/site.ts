@@ -49,6 +49,7 @@ export const site = {
   ] as const,
   assets: {
     figure: "/figure.jpg",
+    icon: "/icon.jpg",
     signature: "/signature.png",
   },
   status: {
