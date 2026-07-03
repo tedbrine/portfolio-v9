@@ -12,10 +12,10 @@ import { useStatus } from "@/hooks/use-status";
 import { cn } from "@/lib/utils";
 
 const discordStatusLabel: Record<DiscordPresenceStatus, string> = {
-  online: "Online",
-  idle: "Idle",
-  dnd: "Do not disturb",
-  offline: "Offline",
+  online: "Available",
+  idle: "Away",
+  dnd: "Busy",
+  offline: "Unavailable",
 };
 
 const discordStatusColor: Record<DiscordPresenceStatus, string> = {
