@@ -8,6 +8,15 @@ import type {
 } from "@/lib/status/types";
 
 const HACKATIME_IDLE_MINUTES = 15;
+const HACKATIME_LAST_PROJECT_PLACEHOLDER = "<<LAST_PROJECT>>";
+
+function sanitizeHackatimeProject(project: string | null): string | null {
+  if (!project || project === HACKATIME_LAST_PROJECT_PLACEHOLDER) {
+    return null;
+  }
+
+  return project;
+}
 const LASTFM_RECENT_ACTIVITY_MINUTES = 5;
 
 type LanyardActivity = {
@@ -236,7 +245,7 @@ async function fetchHackatime(
         if (minutesSinceHeartbeat <= HACKATIME_IDLE_MINUTES) {
           active = true;
           language = latest.language;
-          project = latest.project;
+          project = sanitizeHackatimeProject(latest.project);
         }
       }
     }
