@@ -18,7 +18,7 @@ export const ProjectItem = ({
       target="_blank"
       rel="noopener noreferrer"
       onMouseEnter={onInteract}
-      className="group flex gap-3 bg-background px-5 py-5 transition-colors hover:bg-foreground/[0.02] sm:px-6 sm:py-6"
+      className="group flex gap-3 bg-background px-5 py-5 transition-colors hover:bg-foreground/5 sm:px-6 sm:py-6"
     >
       {/** biome-ignore lint/performance/noImgElement: local SVG brand mark */}
       <img

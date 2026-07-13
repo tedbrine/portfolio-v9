@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
-import { FaLinkedin, FaTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
 import { LetsConnectForm } from "@/components/contact/lets-connect-form";
 import { LetsConnect } from "@/components/contact/lets-connect";
 import {
@@ -30,6 +30,7 @@ import { site } from "@/lib/site";
 const socialIcons = {
   X: FaTwitter,
   LinkedIn: FaLinkedin,
+  GitHub: FaGithub,
   Calendar,
 } as const;
 

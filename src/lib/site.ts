@@ -43,6 +43,10 @@ export const site = {
       href: "https://linkedin.com/in/tedbrine",
     },
     {
+      label: "GitHub",
+      href: "https://github.com/tedbrine",
+    },
+    {
       label: "Calendar",
       href: "https://els.cal.com/ted",
     },
