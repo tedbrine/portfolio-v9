@@ -8,6 +8,7 @@ export const Description = () => {
     <ContentBox
       className="flex flex-col gap-3 px-6 py-6 sm:px-10 sm:py-8"
       position="middle"
+      label="Bio"
     >
       <p className="text-foreground/80">
         I&apos;m a <Num>{getAge(site.birthDate)}</Num> year old{" "}

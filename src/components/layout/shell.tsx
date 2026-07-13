@@ -29,14 +29,17 @@ export const ContentBox = ({
   children,
   position = "middle",
   className,
+  label,
   ...props
 }: React.ComponentProps<"section"> & {
   position?: SectionPosition;
+  label?: string;
 }) => {
   return (
     <section
       {...props}
       className={cn(
+        "group",
         "relative px-10 py-8",
         "before:-translate-x-1/2 before:absolute before:left-1/2 before:h-px before:w-screen before:bg-foreground/7",
         "after:-translate-x-1/2 after:absolute after:left-1/2 after:h-px after:w-screen after:bg-foreground/7",
@@ -47,6 +50,14 @@ export const ContentBox = ({
         className,
       )}
     >
+      {label ? (
+        <span
+          aria-hidden
+          className="pointer-events-none absolute top-3 right-full mr-[calc(48px+1rem)] hidden select-none whitespace-nowrap font-mono text-[11px] text-foreground/25 tracking-wide transition-colors group-hover:text-foreground/50 xl:block"
+        >
+          {label}
+        </span>
+      ) : null}
       {children}
     </section>
   );

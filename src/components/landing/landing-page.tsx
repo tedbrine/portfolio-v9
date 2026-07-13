@@ -1,5 +1,6 @@
 import { Description } from "@/components/landing/description";
 import { Header } from "@/components/landing/header";
+import { Projects } from "@/components/landing/projects/projects";
 import { Signature } from "@/components/landing/signature";
 import { StatusSection } from "@/components/landing/status/status-section";
 import { Tech } from "@/components/landing/tech/tech";
@@ -13,6 +14,7 @@ export const LandingPage = () => {
       <StatusSection />
       <Description />
       <Tech />
+      <Projects />
       <Signature />
     </PageShell>
   );
