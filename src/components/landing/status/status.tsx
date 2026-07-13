@@ -43,7 +43,7 @@ function StatusRow({
   return (
     <span
       className={cn(
-        "inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm text-muted-foreground",
+        "inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm text-muted-foreground/80",
         className,
       )}
     >
@@ -93,41 +93,23 @@ export const Status = ({ initialStatus, className }: StatusProps) => {
       key: "time",
       node: (
         <StatusRow>
-          <span className="font-mono text-foreground/80 tabular-nums">
-            {time}
-          </span>
+          <span className="font-mono text-foreground/80 tabular-nums">{time}</span>
           <span>in {timezoneLabel}</span>
         </StatusRow>
       ),
     });
   }
 
-  if (status?.coding?.active || status?.coding?.todayTotal) {
+  if (status?.coding?.todayTotal) {
     items.push({
       key: "coding",
       node: (
         <StatusRow className="items-start sm:items-center">
-          <Code2 className="mt-0.5 size-3.5 shrink-0 text-foreground/50 sm:mt-0" />
-          {status.coding.active ? (
-            <span className="min-w-0 leading-snug">
-              <span className="text-foreground/50">Coding in </span>
-              <span className="text-foreground/80">
-                {status.coding.language ?? "something"}
-              </span>
-              {status.coding.project ? (
-                <>
-                  <span className="text-foreground/30"> · </span>
-                  <span className="text-foreground/60">
-                    {status.coding.project}
-                  </span>
-                </>
-              ) : null}
-            </span>
-          ) : (
-            <span className="text-foreground/80">
-              {status.coding.todayTotal} coded today
-            </span>
-          )}
+          <Code2 className="mt-0.5 size-3.5 shrink-0 sm:mt-0" />
+          <span>
+            <span className="text-foreground/80">{status.coding.todayTotal}</span>{" "}
+            coded today
+          </span>
         </StatusRow>
       ),
     });
@@ -138,17 +120,15 @@ export const Status = ({ initialStatus, className }: StatusProps) => {
       key: "music",
       node: (
         <StatusRow className="items-start sm:items-center">
-          <Music2 className="mt-0.5 size-3.5 shrink-0 text-foreground/50 sm:mt-0" />
+          <Music2 className="mt-0.5 size-3.5 shrink-0 sm:mt-0" />
           <span className="min-w-0 leading-snug">
-            <span className="text-foreground/50">
-              {status.music.isNowPlaying ? "Listening to " : "Recently played "}
-            </span>
+            {status.music.isNowPlaying ? "Listening to " : "Recently played "}
             {status.music.url ? (
               <Link
                 href={status.music.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/80 transition-colors hover:text-foreground"
+                className="text-foreground/80 transition-opacity hover:opacity-80"
               >
                 {status.music.artist} — {status.music.track}
               </Link>
@@ -166,11 +146,8 @@ export const Status = ({ initialStatus, className }: StatusProps) => {
       key: "activity",
       node: (
         <StatusRow>
-          <span className="min-w-0 leading-snug text-foreground/80">
-            {status.discord.activity.label}{" "}
-            <span className="text-foreground/60">
-              {status.discord.activity.detail}
-            </span>
+          <span className="min-w-0 leading-snug">
+            {status.discord.activity.label} {status.discord.activity.detail}
           </span>
         </StatusRow>
       ),
