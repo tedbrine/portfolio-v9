@@ -4,10 +4,12 @@ type SectionPosition = "first" | "middle" | "last" | "single";
 
 export const PageShell = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen overflow-x-clip bg-background text-foreground">
       <div className="mx-auto grid min-h-screen grid-cols-[24px_minmax(0,1fr)_24px] md:grid-cols-[1fr_48px_minmax(0,48rem)_48px_1fr]">
         <PatternRail className="col-start-1 md:col-start-2" />
-        <div className="relative col-start-2 md:col-start-3">{children}</div>
+        <div className="relative col-start-2 min-w-0 md:col-start-3">
+          {children}
+        </div>
         <PatternRail className="col-start-3 md:col-start-4" />
       </div>
     </main>
@@ -41,8 +43,8 @@ export const ContentBox = ({
       className={cn(
         "group",
         "relative px-10 py-8",
-        "before:-translate-x-1/2 before:absolute before:left-1/2 before:h-px before:w-screen before:bg-foreground/7",
-        "after:-translate-x-1/2 after:absolute after:left-1/2 after:h-px after:w-screen after:bg-foreground/7",
+        "before:absolute before:top-0 before:left-1/2 before:h-px before:w-screen before:-translate-x-1/2 before:bg-foreground/7",
+        "after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-screen after:-translate-x-1/2 after:bg-foreground/7",
         position === "single" && "before:top-0 after:bottom-0",
         position === "first" && "before:top-0 after:hidden",
         position === "middle" && "before:top-0 after:hidden",
