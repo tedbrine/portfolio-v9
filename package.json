@@ -2,6 +2,7 @@
   "name": "portfolio-v9",
   "version": "9.0.0",
   "private": true,
+  "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "next dev",
     "build": "gt translate && next build",

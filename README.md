@@ -31,3 +31,7 @@ bun run lint
 ## Environment
 
 Most features need env vars for external services (Discord bot, Last.fm, Hackatime, Upstash, Postmark). Without them, the site still runs locally, but status widgets, caching, and contact submission may not work.
+
+## License
+
+This project is source-available for viewing and inspiration only. You may not reuse, republish, or claim this work as your own. See `/LICENSE` for full terms.
