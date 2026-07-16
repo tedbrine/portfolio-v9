@@ -124,12 +124,13 @@
   html {
     @apply font-sans;
     overflow-x: clip;
-    scrollbar-gutter: stable;
   }
 
   body {
     @apply bg-background text-foreground;
     overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
   }
 
   button:not(:disabled),

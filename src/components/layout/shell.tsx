@@ -4,8 +4,8 @@ type SectionPosition = "first" | "middle" | "last" | "single";
 
 export const PageShell = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="min-h-screen overflow-x-clip bg-background text-foreground">
-      <div className="mx-auto grid min-h-screen grid-cols-[24px_minmax(0,1fr)_24px] md:grid-cols-[1fr_48px_minmax(0,48rem)_48px_1fr]">
+    <main className="w-full min-w-0 min-h-screen overflow-x-clip bg-background text-foreground">
+      <div className="mx-auto grid min-h-screen w-full min-w-0 grid-cols-[24px_minmax(0,1fr)_24px] md:grid-cols-[1fr_48px_minmax(0,48rem)_48px_1fr]">
         <PatternRail className="col-start-1 md:col-start-2" />
         <div className="relative col-start-2 min-w-0 md:col-start-3">
           {children}
@@ -43,8 +43,11 @@ export const ContentBox = ({
       className={cn(
         "group",
         "relative px-10 py-8",
-        "before:absolute before:top-0 before:left-1/2 before:h-px before:w-screen before:-translate-x-1/2 before:bg-foreground/7",
-        "after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-screen after:-translate-x-1/2 after:bg-foreground/7",
+        // Full-bleed hairlines without w-screen/100vw (100vw is wider than the
+        // layout when a scrollbar is present and causes a right-edge gap). Large
+        // fixed overshoot is clipped by the page overflow-x: clip.
+        "before:pointer-events-none before:absolute before:top-0 before:right-[-9999px] before:left-[-9999px] before:h-px before:bg-foreground/7",
+        "after:pointer-events-none after:absolute after:right-[-9999px] after:bottom-0 after:left-[-9999px] after:h-px after:bg-foreground/7",
         position === "single" && "before:top-0 after:bottom-0",
         position === "first" && "before:top-0 after:hidden",
         position === "middle" && "before:top-0 after:hidden",
