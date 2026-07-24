@@ -19,8 +19,8 @@ export const BastBanner = () => {
           <div className="bast-banner-pattern-mid" />
         </div>
 
-        <div className="relative grid grid-cols-[1fr_auto] items-center gap-3">
-          <div className="flex min-w-0 items-baseline justify-center gap-2 sm:gap-3">
+        <div className="relative flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center sm:grid sm:grid-cols-[1fr_auto] sm:items-center sm:gap-3 sm:text-left">
+          <div className="flex min-w-0 flex-wrap items-center justify-center gap-2 sm:items-baseline sm:gap-3">
             <span className="inline-flex shrink-0 items-baseline font-mono font-semibold text-sm tracking-tight text-white">
               Bast
               <span
