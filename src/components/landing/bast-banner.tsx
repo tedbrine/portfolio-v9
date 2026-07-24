@@ -55,10 +55,6 @@ export const BastBanner = () => {
             The fast way into the servers you use every day.
           </p>
 
-          <span className="hidden text-white/30 sm:inline" aria-hidden>
-            ·
-          </span>
-
           <ArrowUpRight
             aria-hidden
             className="hidden size-3.5 text-white transition-transform group-hover:translate-x-px group-hover:-translate-y-px sm:inline"
