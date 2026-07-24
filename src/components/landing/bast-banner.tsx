@@ -19,8 +19,8 @@ export const BastBanner = () => {
           <div className="bast-banner-pattern-mid" />
         </div>
 
-        <div className="relative flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center sm:grid sm:grid-cols-[1fr_auto] sm:items-center sm:gap-3 sm:text-left">
-          <div className="flex min-w-0 flex-wrap items-center justify-center gap-2 sm:items-baseline sm:gap-3">
+        <div className="relative flex flex-col items-center justify-center gap-1 text-center sm:grid sm:grid-cols-[1fr_auto] sm:items-center sm:gap-3 sm:text-left">
+          <div className="flex min-w-0 flex-col items-center gap-1 sm:flex-row sm:items-baseline sm:gap-3">
             <span className="inline-flex shrink-0 items-baseline font-mono font-semibold text-sm tracking-tight text-white">
               Bast
               <span
@@ -32,7 +32,7 @@ export const BastBanner = () => {
               </span>
             </span>
 
-            <span className="shrink-0 text-white/30" aria-hidden>
+            <span className="hidden shrink-0 text-white/30 sm:inline" aria-hidden>
               ·
             </span>
 
@@ -41,7 +41,7 @@ export const BastBanner = () => {
             </p>
           </div>
 
-          <span className="flex shrink-0">
+          <span className="hidden shrink-0 sm:flex">
             <ArrowUpRight aria-hidden className="size-5 text-white" />
           </span>
         </div>
