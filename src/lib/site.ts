@@ -8,7 +8,7 @@ export const site = {
   location: {
     label: "Great Britain",
     countryCode: "GB",
-    flagUrl: "https://ted.ac/api/emoji/gb",
+    flagUrl: "/api/emoji/gb",
   },
   seo: {
     tagline:

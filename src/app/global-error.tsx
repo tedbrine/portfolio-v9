@@ -3,8 +3,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { useEffect } from "react";
 import { ErrorPage } from "@/components/layout/error-page";
-import { cn } from "@/lib/utils";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +14,7 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+
 });
 
 export default function GlobalError({
@@ -44,6 +45,7 @@ export default function GlobalError({
           title="Something went wrong"
           description="A critical error occurred. You can try again or return to the homepage."
           actions={
+            <span className="sr-only">{error.message}</span>
             <div className="flex flex-wrap items-center justify-center gap-2">
               <button
                 type="button"
