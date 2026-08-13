@@ -14,7 +14,6 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-
 });
 
 export default function GlobalError({
@@ -45,22 +44,24 @@ export default function GlobalError({
           title="Something went wrong"
           description="A critical error occurred. You can try again or return to the homepage."
           actions={
-            <span className="sr-only">{error.message}</span>
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              <button
-                type="button"
-                onClick={() => unstable_retry()}
-                className="inline-flex h-9 items-center justify-center rounded-md border border-foreground/7 bg-background px-2.5 font-medium text-sm transition-all hover:bg-foreground/5"
-              >
-                Try again
-              </button>
-              <a
-                href="/"
-                className="inline-flex h-9 items-center justify-center rounded-md border border-foreground/7 bg-background px-2.5 font-medium text-sm transition-all hover:bg-foreground/5"
-              >
-                Back home
-              </a>
-            </div>
+            <>
+              <span className="sr-only">{error.message}</span>
+              <div className="flex flex-wrap items-center justify-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => unstable_retry()}
+                  className="inline-flex h-9 items-center justify-center rounded-md border border-foreground/7 bg-background px-2.5 font-medium text-sm transition-all hover:bg-foreground/5"
+                >
+                  Try again
+                </button>
+                <a
+                  href="/"
+                  className="inline-flex h-9 items-center justify-center rounded-md border border-foreground/7 bg-background px-2.5 font-medium text-sm transition-all hover:bg-foreground/5"
+                >
+                  Back home
+                </a>
+              </div>
+            </>
           }
         />
       </body>
