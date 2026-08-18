@@ -12,8 +12,8 @@ export const site = {
   },
   seo: {
     tagline:
-      "Building distributed software systems focused on infrastructure, real-time communication, and scalable web applications.",
-    description: `${fullName} is a software engineer from Great Britain specialising in distributed systems, infrastructure, real-time communication, and scalable web applications.`,
+      "Runs ellipse Software. Builds Bast, Helios, and software for other teams.",
+    description: `${fullName} is a software engineer from Great Britain. He runs ellipse Software, building Bast, Helios, and custom software for teams.`,
     keywords: [
       fullName,
       "Ted Brine portfolio",
@@ -54,7 +54,7 @@ export const site = {
   assets: {
     figure: "/figure.jpg",
     icon: "/icon.jpg",
-    signature: "/signature.png",
+    signature: "/signature.svg",
   },
   status: {
     timezone: "Europe/London",

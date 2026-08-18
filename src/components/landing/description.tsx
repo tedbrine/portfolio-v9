@@ -26,8 +26,9 @@ export const Description = () => {
       </p>
       <p className="text-foreground/80">
         <T>
-          I build distributed software systems focused on infrastructure,
-          real-time communication, and scalable web applications.
+          I run ellipse Software. We build Bast, a terminal tool for SSH hosts
+          and keys; Helios, a lighting control platform; and software for other
+          teams.
         </T>
       </p>
     </ContentBox>

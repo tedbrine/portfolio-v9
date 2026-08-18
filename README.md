@@ -1,6 +1,6 @@
 # portfolio-v9
 
-Personal portfolio site for [Ted Brine](https://ted.ac) — a software engineer focused on distributed systems, infrastructure, and real-time web applications.
+Personal portfolio site for [Ted Brine](https://ted.ac): a software engineer who runs ellipse Software, building Bast, Helios, and software for other teams.
 
 ## What it is
 

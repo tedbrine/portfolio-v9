@@ -1,17 +1,17 @@
 # Ted Brine
 
-> Software engineer from Great Britain building distributed software systems focused on infrastructure, real-time communication, and scalable web applications.
+> Software engineer from Great Britain. Runs ellipse Software, building Bast, Helios, and software for other teams.
 
 ## About
 
-Ted Brine is a software engineer based in Great Britain. His work centres on distributed systems, backend infrastructure, real-time communication, and scalable web applications. This site is his personal portfolio and primary contact point.
+Ted Brine is a software engineer based in Great Britain. He runs ellipse Software, a studio that builds Bast (a terminal SSH host and key manager), Helios (a lighting control platform), and software for other teams. This site is his personal portfolio and primary contact point.
 
 ## Expertise
 
-- Distributed software systems
-- Infrastructure engineering
-- Real-time communication
-- Scalable web applications
+- Developer tools and terminal software
+- SSH, infrastructure, and server access
+- Lighting control systems
+- Custom software for teams
 - Next.js, React, TypeScript, Node.js
 - PostgreSQL, Redis, Docker, Cloudflare
 
