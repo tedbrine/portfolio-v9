@@ -1,20 +1,13 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { NextResponse } from "next/server";
 
 export const GET = async () => {
-  const image = await fetch("https://galileo.ted.ac/avatar.png", {
-    next: {
-      revalidate: 60 * 60 * 24 * 7,
-      tags: ["avatar", "all"],
-    },
-  });
+  const file = await readFile(path.join(process.cwd(), "public", "avatar.jpg"));
 
-  const imageBlob = new Blob([new Uint8Array(await image.arrayBuffer())], {
-    type: "image/png",
-  });
-
-  return new NextResponse(imageBlob, {
+  return new NextResponse(file, {
     headers: {
-      "Content-Type": "image/png",
+      "Content-Type": "image/jpeg",
       "Cache-Control": "public, max-age=86400",
     },
   });
