@@ -25,7 +25,7 @@ export const ProjectItem = ({
         src={icon}
         alt=""
         aria-hidden
-        className="mt-0.5 size-4 shrink-0 opacity-80 transition-opacity group-hover:opacity-100"
+        className="mt-0.5 size-4 shrink-0 object-contain opacity-80 transition-opacity group-hover:opacity-100"
       />
       <div className="flex min-w-0 flex-col gap-1">
         <span className="font-medium text-foreground text-sm tracking-tight">

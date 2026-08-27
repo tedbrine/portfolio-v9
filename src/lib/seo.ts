@@ -141,10 +141,12 @@ export function createJsonLd() {
       knowsAbout: [
         "ellipse Software",
         "Bast",
+        "Ellora",
         "Helios",
         "Developer tools",
         "SSH",
         "Infrastructure",
+        "Cloud workstations",
         "Lighting control",
         "Next.js",
         "React",

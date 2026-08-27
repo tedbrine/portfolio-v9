@@ -19,4 +19,17 @@ export const projects: Project[] = [
     href: "https://els.re/helios",
     icon: "/helios.svg",
   },
+  {
+    name: "Ellora",
+    description: "A cloud workstation for you and your agents.",
+    href: "https://ellora.dev",
+    icon: "/ellora.svg",
+  },
+  {
+    name: "Bast",
+    description:
+      "Browse SSH hosts, manage keys, and connect from the terminal.",
+    href: "https://bast.sh",
+    icon: "/bast.svg",
+  },
 ];
