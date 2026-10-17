@@ -139,25 +139,17 @@
   }
 }
 
-@keyframes bast-cursor-blink {
-  0%,
-  49% {
-    opacity: 1;
-  }
-
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
-
-.bast-banner-pattern,
-.bast-banner-pattern-mid {
+.ad-banner-pattern,
+.ad-banner-pattern-mid {
   position: absolute;
   inset: -12%;
   transform: scale(1);
   transform-origin: center;
-  background-image: radial-gradient(circle, #7c3aed 1.25px, transparent 1.25px);
+  background-image: radial-gradient(
+    circle,
+    var(--ad-brand-colour) 1.25px,
+    transparent 1.25px
+  );
   background-position: center;
   background-size: 6px 6px;
   transition:
@@ -167,7 +159,7 @@
   will-change: transform, filter;
 }
 
-.bast-banner-pattern {
+.ad-banner-pattern {
   filter: brightness(1) saturate(1);
   mask-image: linear-gradient(
     to right,
@@ -187,7 +179,7 @@
   );
 }
 
-.bast-banner-pattern-mid {
+.ad-banner-pattern-mid {
   opacity: 0;
   filter: brightness(1.2) saturate(1.15);
   mask-image: linear-gradient(
@@ -208,16 +200,16 @@
   );
 }
 
-.bast-banner-link:hover .bast-banner-pattern,
-.bast-banner-link:hover .bast-banner-pattern-mid {
+.ad-banner-link:hover .ad-banner-pattern,
+.ad-banner-link:hover .ad-banner-pattern-mid {
   transform: scale(0.86);
 }
 
-.bast-banner-link:hover .bast-banner-pattern {
+.ad-banner-link:hover .ad-banner-pattern {
   filter: brightness(1.18) saturate(1.1);
 }
 
-.bast-banner-link:hover .bast-banner-pattern-mid {
+.ad-banner-link:hover .ad-banner-pattern-mid {
   opacity: 0.55;
   filter: brightness(1.3) saturate(1.18);
 }

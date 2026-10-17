@@ -1,4 +1,4 @@
-import { BastBanner } from "@/components/landing/bast-banner";
+import { AdBanner } from "@/components/landing/ad-banner";
 import { Description } from "@/components/landing/description";
 import { Header } from "@/components/landing/header";
 import { Projects } from "@/components/landing/projects/projects";
@@ -11,7 +11,7 @@ export const LandingPage = () => {
   return (
     <PageShell>
       <ContentBox position="first" className="h-12 sm:h-16 md:h-24" />
-      <BastBanner />
+      <AdBanner />
       <Header />
       <StatusSection />
       <Description />
