@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import { ContentBox } from "@/components/layout/shell";
@@ -93,15 +92,15 @@ export const AdBanner = async () => {
           <div className="ad-banner-pattern-mid" />
         </div>
 
-        <div className="relative flex items-center justify-between gap-3">
-          <div className="flex min-w-0 items-center gap-3">
+        <div className="relative flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-between sm:gap-3 sm:text-left">
+          <div className="flex min-w-0 flex-col items-center gap-2 sm:flex-row sm:gap-3">
             <Image
               src={ad.brand.logo}
               alt={ad.brand.name}
               width={112}
               height={24}
               unoptimized
-              className="h-6 max-w-28 shrink-0 object-contain"
+              className="h-5 max-w-24 shrink-0 object-contain sm:h-6 sm:max-w-28"
             />
 
             <span
@@ -111,12 +110,10 @@ export const AdBanner = async () => {
               ·
             </span>
 
-            <p className="min-w-0 break-words text-sm text-white/95 tracking-tight">
+            <p className="min-w-0 break-words text-sm text-white/95 tracking-tight sm:text-left">
               {ad.header}
             </p>
           </div>
-
-          <ArrowUpRight aria-hidden className="size-5 shrink-0 text-white" />
         </div>
       </a>
     </ContentBox>
