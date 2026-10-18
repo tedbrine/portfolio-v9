@@ -161,39 +161,33 @@
 
 .ad-banner-pattern {
   filter: brightness(1) saturate(1);
-  mask-image: linear-gradient(
-    to right,
-    transparent 28%,
-    rgba(0, 0, 0, 0.08) 48%,
-    rgba(0, 0, 0, 0.62) 74%,
-    rgba(0, 0, 0, 1) 100%
+  mask-image: radial-gradient(
+    ellipse 88% 145% at 82% 118%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.62) 43%,
+    transparent 100%
   );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 28%,
-    rgba(0, 0, 0, 0.08) 48%,
-    rgba(0, 0, 0, 0.62) 74%,
-    rgba(0, 0, 0, 1) 100%
+  -webkit-mask-image: radial-gradient(
+    ellipse 88% 145% at 82% 118%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.62) 43%,
+    transparent 100%
   );
 }
 
 .ad-banner-pattern-mid {
   opacity: 0;
   filter: brightness(1.2) saturate(1.15);
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(0, 0, 0, 0.2) 30%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.2) 70%,
+  mask-image: radial-gradient(
+    ellipse 74% 132% at 64% 120%,
+    rgba(0, 0, 0, 0.74) 0%,
+    rgba(0, 0, 0, 0.26) 55%,
     transparent 100%
   );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(0, 0, 0, 0.2) 30%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.2) 70%,
+  -webkit-mask-image: radial-gradient(
+    ellipse 74% 132% at 64% 120%,
+    rgba(0, 0, 0, 0.74) 0%,
+    rgba(0, 0, 0, 0.26) 55%,
     transparent 100%
   );
 }

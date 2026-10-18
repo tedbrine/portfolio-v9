@@ -93,9 +93,9 @@ export const AdBanner = async () => {
           <div className="ad-banner-pattern-mid" />
         </div>
 
-        <div className="relative flex flex-col items-center gap-2 text-center sm:grid sm:grid-cols-[8rem_minmax(0,1fr)_2.5rem] sm:items-center sm:gap-6 sm:text-left md:grid-cols-[9rem_minmax(0,1fr)_3rem]">
-          <div className="flex flex-col items-center gap-2 sm:items-start">
-            <span className="hidden font-medium text-[10px] text-white/55 uppercase tracking-[0.2em] sm:inline">
+        <div className="relative flex flex-col items-center gap-2 text-center sm:grid sm:grid-cols-[8rem_minmax(0,1fr)_2rem] sm:items-center sm:gap-6 sm:text-left md:grid-cols-[9rem_minmax(0,1fr)_2.25rem]">
+          <div className="flex flex-col items-center gap-1 sm:items-start">
+            <span className="hidden font-medium text-[9px] text-white/55 uppercase tracking-[0.16em] sm:inline">
               Sponsored
             </span>
             <Image
@@ -108,13 +108,13 @@ export const AdBanner = async () => {
             />
           </div>
 
-          <p className="min-w-0 break-words text-sm text-white/95 tracking-tight sm:text-lg sm:leading-snug md:text-xl">
+          <p className="min-w-0 break-words text-sm text-white/95 tracking-tight sm:text-base sm:leading-snug md:text-lg">
             {ad.header}
           </p>
 
           <ArrowUpRight
             aria-hidden
-            className="ad-banner-action hidden size-10 shrink-0 rounded-full border border-white/20 p-2 text-white sm:block md:size-12 md:p-2.5"
+            className="ad-banner-action hidden size-8 shrink-0 rounded-full border border-white/20 p-1.5 text-white sm:block md:size-9 md:p-2"
           />
         </div>
       </a>
