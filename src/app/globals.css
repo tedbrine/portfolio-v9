@@ -139,11 +139,17 @@
   }
 }
 
+.ad-banner-pattern-field {
+  position: absolute;
+  inset: -20%;
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .ad-banner-pattern {
   position: absolute;
   inset: 0;
-  transform: scale(1);
-  transform-origin: center;
   background-image: linear-gradient(
     to bottom,
     color-mix(in oklab, var(--ad-brand-colour) 24%, #17100f) 0%,
@@ -162,16 +168,12 @@
   -webkit-mask-size: 7px 7px;
   -webkit-mask-repeat: repeat;
   -webkit-mask-position: 0 0;
-  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .ad-banner-pattern-mid {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  transform: scale(1);
-  transform-origin: center;
-  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .ad-banner-accent-dot {
@@ -184,7 +186,7 @@
   clip-path: circle(50%);
   transform: translate(-50%, -50%);
   opacity: 0;
-  animation: ad-banner-dot-twinkle 16s ease-in-out infinite;
+  animation: ad-banner-dot-twinkle 6s ease-in-out infinite;
 }
 
 .ad-banner-accent-dot.is-lighter {
@@ -193,20 +195,25 @@
 
 @keyframes ad-banner-dot-twinkle {
   0%,
-  80%,
+  65%,
   100% {
     opacity: 0;
     filter: none;
   }
 
-  84% {
+  70% {
     opacity: 1;
-    filter: brightness(1.2) drop-shadow(0 0 3px var(--ad-dot-colour));
+    filter: brightness(1.35) drop-shadow(0 0 5px var(--ad-dot-colour));
   }
 
-  87% {
-    opacity: 0.72;
-    filter: brightness(1.1) drop-shadow(0 0 1px var(--ad-dot-colour));
+  73% {
+    opacity: 0.8;
+    filter: brightness(1.15) drop-shadow(0 0 2px var(--ad-dot-colour));
+  }
+
+  78% {
+    opacity: 0;
+    filter: none;
   }
 }
 
@@ -218,9 +225,8 @@
     border-color 0.3s ease;
 }
 
-.ad-banner-link:hover .ad-banner-pattern,
-.ad-banner-link:hover .ad-banner-pattern-mid {
-  transform: scale(0.86);
+.ad-banner-link:hover .ad-banner-pattern-field {
+  transform: scale(0.84);
 }
 
 .ad-banner-link:hover .ad-banner-action {
@@ -231,19 +237,17 @@
 
 @media (prefers-reduced-motion: reduce) {
   .ad-banner-action,
-  .ad-banner-pattern,
-  .ad-banner-pattern-mid,
+  .ad-banner-pattern-field,
   .ad-banner-accent-dot {
     transition: none;
     animation: none;
   }
 
   .ad-banner-accent-dot {
-    opacity: 0;
+    opacity: 1;
   }
 
-  .ad-banner-link:hover .ad-banner-pattern,
-  .ad-banner-link:hover .ad-banner-pattern-mid {
+  .ad-banner-link:hover .ad-banner-pattern-field {
     transform: none;
   }
 }

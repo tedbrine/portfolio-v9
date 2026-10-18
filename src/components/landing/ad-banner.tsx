@@ -14,11 +14,11 @@ const AD_ACCENT_DOTS = (() => {
   return Array.from({ length: 14 }, (_, id) => {
     return {
       id,
-      x: Math.floor(random() * 104),
+      x: Math.floor(random() * 150),
       y: Math.floor(random() * 9),
       lighter: random() < 0.14,
-      duration: 12 + random() * 8,
-      delay: random() * 18,
+      duration: 4.5 + random() * 4.5,
+      delay: random() * 9,
     };
   });
 })();
@@ -107,24 +107,26 @@ export const AdBanner = async () => {
           className="pointer-events-none absolute inset-px overflow-hidden"
           aria-hidden
         >
-          <div className="ad-banner-pattern" />
-          <div className="ad-banner-pattern-mid">
-            {AD_ACCENT_DOTS.map((dot) => (
-              <span
-                key={dot.id}
-                className={
-                  dot.lighter
-                    ? "ad-banner-accent-dot is-lighter"
-                    : "ad-banner-accent-dot"
-                }
-                style={{
-                  left: `${dot.x * 7 + 3.5}px`,
-                  top: `${dot.y * 7 + 3.5}px`,
-                  animationDuration: `${dot.duration}s`,
-                  animationDelay: `-${dot.delay}s`,
-                }}
-              />
-            ))}
+          <div className="ad-banner-pattern-field">
+            <div className="ad-banner-pattern" />
+            <div className="ad-banner-pattern-mid">
+              {AD_ACCENT_DOTS.map((dot) => (
+                <span
+                  key={dot.id}
+                  className={
+                    dot.lighter
+                      ? "ad-banner-accent-dot is-lighter"
+                      : "ad-banner-accent-dot"
+                  }
+                  style={{
+                    left: `${dot.x * 7 + 3.5}px`,
+                    top: `${dot.y * 7 + 3.5}px`,
+                    animationDuration: `${dot.duration}s`,
+                    animationDelay: `-${dot.delay}s`,
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
