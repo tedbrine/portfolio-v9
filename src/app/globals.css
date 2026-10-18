@@ -142,6 +142,8 @@
 .ad-banner-pattern {
   position: absolute;
   inset: 0;
+  transform: scale(1);
+  transform-origin: center;
   background-image: linear-gradient(
     to bottom,
     color-mix(in oklab, var(--ad-brand-colour) 24%, #17100f) 0%,
@@ -154,26 +156,27 @@
   -webkit-mask-image: radial-gradient(circle, #000 1.1px, transparent 1.2px);
   -webkit-mask-size: 7px 7px;
   -webkit-mask-repeat: repeat;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .ad-banner-pattern-mid {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .ad-banner-accent-dot {
   position: absolute;
-  width: 1.5px;
-  height: 1.5px;
+  width: 2.2px;
+  height: 2.2px;
   border-radius: 50%;
   background-color: var(--ad-brand-colour);
-  opacity: 0.78;
 }
 
 .ad-banner-accent-dot.is-lighter {
-  width: 1.75px;
-  height: 1.75px;
   background-color: color-mix(in oklab, var(--ad-brand-colour) 62%, white);
 }
 
@@ -185,6 +188,11 @@
     border-color 0.3s ease;
 }
 
+.ad-banner-link:hover .ad-banner-pattern,
+.ad-banner-link:hover .ad-banner-pattern-mid {
+  transform: scale(0.86);
+}
+
 .ad-banner-link:hover .ad-banner-action {
   transform: translateX(2px);
   border-color: color-mix(in oklab, var(--ad-brand-colour) 70%, transparent);
@@ -192,7 +200,14 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ad-banner-action {
+  .ad-banner-action,
+  .ad-banner-pattern,
+  .ad-banner-pattern-mid {
     transition: none;
+  }
+
+  .ad-banner-link:hover .ad-banner-pattern,
+  .ad-banner-link:hover .ad-banner-pattern-mid {
+    transform: none;
   }
 }
