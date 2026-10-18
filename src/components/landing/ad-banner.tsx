@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import { ContentBox } from "@/components/layout/shell";
@@ -85,7 +86,7 @@ export const AdBanner = async () => {
         style={{ "--ad-brand-colour": ad.brand.colour } as CSSProperties}
       >
         <div
-          className="pointer-events-none absolute inset-0 overflow-hidden"
+          className="pointer-events-none absolute inset-px overflow-hidden"
           aria-hidden
         >
           <div className="ad-banner-pattern" />
@@ -114,6 +115,11 @@ export const AdBanner = async () => {
               {ad.header}
             </p>
           </div>
+
+          <ArrowUpRight
+            aria-hidden
+            className="hidden size-5 shrink-0 text-white sm:block"
+          />
         </div>
       </a>
     </ContentBox>
