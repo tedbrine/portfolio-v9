@@ -82,7 +82,7 @@ export const AdBanner = async () => {
         href={ad.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="ad-banner-link relative block overflow-hidden py-2.5 pr-4 pl-2 sm:py-3 sm:pr-5 sm:pl-3"
+        className="ad-banner-link relative block overflow-hidden px-4 py-2.5 sm:px-6 sm:py-5 md:py-6"
         style={{ "--ad-brand-colour": ad.brand.colour } as CSSProperties}
       >
         <div
@@ -93,8 +93,11 @@ export const AdBanner = async () => {
           <div className="ad-banner-pattern-mid" />
         </div>
 
-        <div className="relative flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-between sm:gap-3 sm:text-left">
-          <div className="flex min-w-0 flex-col items-center gap-2 sm:flex-row sm:gap-3">
+        <div className="relative flex flex-col items-center gap-2 text-center sm:grid sm:grid-cols-[8rem_minmax(0,1fr)_2.5rem] sm:items-center sm:gap-6 sm:text-left md:grid-cols-[9rem_minmax(0,1fr)_3rem]">
+          <div className="flex flex-col items-center gap-2 sm:items-start">
+            <span className="hidden font-medium text-[10px] text-white/55 uppercase tracking-[0.2em] sm:inline">
+              Sponsored
+            </span>
             <Image
               src={ad.brand.logo}
               alt={ad.brand.name}
@@ -103,22 +106,15 @@ export const AdBanner = async () => {
               unoptimized
               className="h-5 max-w-24 shrink-0 object-contain sm:h-6 sm:max-w-28"
             />
-
-            <span
-              className="hidden shrink-0 text-white/30 sm:inline"
-              aria-hidden
-            >
-              ·
-            </span>
-
-            <p className="min-w-0 break-words text-sm text-white/95 tracking-tight sm:text-left">
-              {ad.header}
-            </p>
           </div>
+
+          <p className="min-w-0 break-words text-sm text-white/95 tracking-tight sm:text-lg sm:leading-snug md:text-xl">
+            {ad.header}
+          </p>
 
           <ArrowUpRight
             aria-hidden
-            className="hidden size-5 shrink-0 text-white sm:block"
+            className="ad-banner-action hidden size-10 shrink-0 rounded-full border border-white/20 p-2 text-white sm:block md:size-12 md:p-2.5"
           />
         </div>
       </a>
