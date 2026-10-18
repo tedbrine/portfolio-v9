@@ -175,17 +175,39 @@
 }
 
 .ad-banner-accent-dot {
+  --ad-dot-colour: var(--ad-brand-colour);
   position: absolute;
   width: 2.4px;
   height: 2.4px;
   border-radius: 50%;
-  background-color: var(--ad-brand-colour);
+  background-color: var(--ad-dot-colour);
   clip-path: circle(50%);
   transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: ad-banner-dot-twinkle 16s ease-in-out infinite;
 }
 
 .ad-banner-accent-dot.is-lighter {
-  background-color: color-mix(in oklab, var(--ad-brand-colour) 62%, white);
+  --ad-dot-colour: color-mix(in oklab, var(--ad-brand-colour) 62%, white);
+}
+
+@keyframes ad-banner-dot-twinkle {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+    filter: none;
+  }
+
+  84% {
+    opacity: 1;
+    filter: brightness(1.2) drop-shadow(0 0 3px var(--ad-dot-colour));
+  }
+
+  87% {
+    opacity: 0.72;
+    filter: brightness(1.1) drop-shadow(0 0 1px var(--ad-dot-colour));
+  }
 }
 
 .ad-banner-action {
@@ -210,8 +232,14 @@
 @media (prefers-reduced-motion: reduce) {
   .ad-banner-action,
   .ad-banner-pattern,
-  .ad-banner-pattern-mid {
+  .ad-banner-pattern-mid,
+  .ad-banner-accent-dot {
     transition: none;
+    animation: none;
+  }
+
+  .ad-banner-accent-dot {
+    opacity: 0;
   }
 
   .ad-banner-link:hover .ad-banner-pattern,

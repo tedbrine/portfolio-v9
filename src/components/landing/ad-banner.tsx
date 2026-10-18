@@ -17,6 +17,8 @@ const AD_ACCENT_DOTS = (() => {
       x: Math.floor(random() * 104),
       y: Math.floor(random() * 9),
       lighter: random() < 0.14,
+      duration: 12 + random() * 8,
+      delay: random() * 18,
     };
   });
 })();
@@ -118,6 +120,8 @@ export const AdBanner = async () => {
                 style={{
                   left: `${dot.x * 7 + 3.5}px`,
                   top: `${dot.y * 7 + 3.5}px`,
+                  animationDuration: `${dot.duration}s`,
+                  animationDelay: `-${dot.delay}s`,
                 }}
               />
             ))}
