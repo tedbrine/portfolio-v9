@@ -218,11 +218,9 @@
 }
 
 .ad-banner-action {
-  background-color: color-mix(in oklab, var(--ad-brand-colour) 14%, transparent);
   transition:
     transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-    background-color 0.3s ease,
-    border-color 0.3s ease;
+    color 0.3s ease;
 }
 
 .ad-banner-link:hover .ad-banner-pattern-field {
@@ -231,8 +229,7 @@
 
 .ad-banner-link:hover .ad-banner-action {
   transform: translateX(2px);
-  border-color: color-mix(in oklab, var(--ad-brand-colour) 70%, transparent);
-  background-color: color-mix(in oklab, var(--ad-brand-colour) 28%, transparent);
+  color: var(--ad-brand-colour);
 }
 
 @media (prefers-reduced-motion: reduce) {

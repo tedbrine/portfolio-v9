@@ -11,13 +11,13 @@ const AD_ACCENT_DOTS = (() => {
     return seed / 0x1_0000_0000;
   };
 
-  return Array.from({ length: 14 }, (_, id) => {
+  return Array.from({ length: 28 }, (_, id) => {
     return {
       id,
       x: Math.floor(random() * 150),
       y: Math.floor(random() * 9),
       lighter: random() < 0.14,
-      duration: 4.5 + random() * 4.5,
+      duration: 5 + random() * 3,
       delay: random() * 9,
     };
   });
@@ -151,7 +151,7 @@ export const AdBanner = async () => {
 
           <ArrowUpRight
             aria-hidden
-            className="ad-banner-action hidden size-8 shrink-0 rounded-full border border-white/20 p-1.5 text-white sm:block md:size-9 md:p-2"
+            className="ad-banner-action hidden size-9 shrink-0 p-2 text-white/75 sm:block md:size-10 md:p-2.5"
           />
         </div>
       </a>
