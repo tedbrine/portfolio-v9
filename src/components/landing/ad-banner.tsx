@@ -130,7 +130,7 @@ export const AdBanner = async () => {
           </div>
         </div>
 
-        <div className="relative flex flex-col items-center gap-2 text-center sm:grid sm:grid-cols-[8rem_minmax(0,1fr)_2rem] sm:items-center sm:gap-6 md:grid-cols-[9rem_minmax(0,1fr)_2.25rem]">
+        <div className="relative flex flex-col items-center gap-2 text-center sm:grid sm:grid-cols-[minmax(0,1fr)_minmax(0,3fr)_minmax(0,1fr)] sm:items-center sm:gap-6">
           <div className="flex flex-col items-center gap-0 sm:items-start">
             <span className="hidden font-medium text-[9px] text-white/55 uppercase leading-none tracking-[0.16em] sm:inline">
               Sponsored
@@ -151,7 +151,7 @@ export const AdBanner = async () => {
 
           <ArrowUpRight
             aria-hidden
-            className="ad-banner-action hidden size-9 shrink-0 p-2 text-white/75 sm:block md:size-10 md:p-2.5"
+            className="ad-banner-action hidden size-9 shrink-0 justify-self-end p-2 text-white/75 sm:block md:size-10 md:p-2.5"
           />
         </div>
       </a>
