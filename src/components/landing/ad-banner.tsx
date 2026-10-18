@@ -4,24 +4,19 @@ import type { CSSProperties } from "react";
 import { ContentBox } from "@/components/layout/shell";
 
 const PRIORITY_AD_URL = "https://api.ads.i.els.re/api/ads/priority";
-const AD_DOT_FIELD_WIDTH = 1000;
-const AD_DOT_FIELD_HEIGHT = 180;
-
-const AD_SCATTER_DOTS = (() => {
+const AD_ACCENT_DOTS = (() => {
   let seed = 0x4d595df4;
   const random = () => {
     seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
     return seed / 0x1_0000_0000;
   };
 
-  return Array.from({ length: 84 }, () => {
-    const lighter = random() < 0.08;
-
+  return Array.from({ length: 14 }, (_, id) => {
     return {
-      x: random() * AD_DOT_FIELD_WIDTH,
-      y: random() * AD_DOT_FIELD_HEIGHT,
-      radius: 0.8 + random() * 0.8,
-      opacity: lighter ? 0.18 + random() * 0.2 : 0.68 + random() * 0.3,
+      id,
+      x: Math.floor(random() * 104),
+      y: Math.floor(random() * 9),
+      lighter: random() < 0.14,
     };
   });
 })();
@@ -112,23 +107,20 @@ export const AdBanner = async () => {
         >
           <div className="ad-banner-pattern" />
           <div className="ad-banner-pattern-mid">
-            <svg
-              viewBox={`0 0 ${AD_DOT_FIELD_WIDTH} ${AD_DOT_FIELD_HEIGHT}`}
-              preserveAspectRatio="none"
-              className="h-full w-full"
-              aria-hidden="true"
-            >
-              {AD_SCATTER_DOTS.map((dot) => (
-                <circle
-                  key={`${dot.x}-${dot.y}`}
-                  cx={dot.x}
-                  cy={dot.y}
-                  r={dot.radius}
-                  fill="var(--ad-brand-colour)"
-                  opacity={dot.opacity}
-                />
-              ))}
-            </svg>
+            {AD_ACCENT_DOTS.map((dot) => (
+              <span
+                key={dot.id}
+                className={
+                  dot.lighter
+                    ? "ad-banner-accent-dot is-lighter"
+                    : "ad-banner-accent-dot"
+                }
+                style={{
+                  left: `${dot.x * 7 + 3.5}px`,
+                  top: `${dot.y * 7 + 3.5}px`,
+                }}
+              />
+            ))}
           </div>
         </div>
 
