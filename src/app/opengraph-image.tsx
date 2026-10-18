@@ -56,35 +56,25 @@ export default async function Image() {
       <div
         style={{
           display: "flex",
-          flexDirection: "column",
           alignItems: "flex-start",
           position: "absolute",
           left: "72px",
-          bottom: "40px",
+          bottom: "44px",
           fontFamily: "Instrument Serif",
         }}
       >
         <div
           style={{
-            color: "#fffdf8",
-            fontSize: 38,
-            fontWeight: 400,
-            letterSpacing: "-0.01em",
-            lineHeight: 1,
-          }}
-        >
-          {site.name.first}
-        </div>
-        <div
-          style={{
-            color: "#ffc47d",
-            fontSize: 88,
+            color: "#f4f0e8",
+            fontSize: 116,
             fontWeight: 400,
             letterSpacing: "-0.02em",
             lineHeight: 1,
+            WebkitTextStrokeWidth: 1.25,
+            WebkitTextStrokeColor: "#f4f0e8",
           }}
         >
-          {site.name.last}
+          {site.name.full}
         </div>
       </div>
     </div>,
