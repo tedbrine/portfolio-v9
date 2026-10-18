@@ -12,6 +12,9 @@ export default async function Image() {
     join(process.cwd(), "public/opengraph-photo.jpg"),
     "base64",
   );
+  const displayFont = await readFile(
+    join(process.cwd(), "assets/fonts/InstrumentSerif-Regular.ttf"),
+  );
   const photoSource = `data:image/jpeg;base64,${photoData}`;
 
   return new ImageResponse(
@@ -58,15 +61,15 @@ export default async function Image() {
           position: "absolute",
           left: "72px",
           bottom: "40px",
-          fontFamily: "ui-sans-serif, system-ui, sans-serif",
+          fontFamily: "Instrument Serif",
         }}
       >
         <div
           style={{
             color: "#fffdf8",
             fontSize: 38,
-            fontWeight: 600,
-            letterSpacing: "-0.025em",
+            fontWeight: 400,
+            letterSpacing: "-0.01em",
             lineHeight: 1,
           }}
         >
@@ -76,8 +79,8 @@ export default async function Image() {
           style={{
             color: "#ffc47d",
             fontSize: 88,
-            fontWeight: 800,
-            letterSpacing: "-0.06em",
+            fontWeight: 400,
+            letterSpacing: "-0.02em",
             lineHeight: 1,
           }}
         >
@@ -85,6 +88,16 @@ export default async function Image() {
         </div>
       </div>
     </div>,
-    { ...size },
+    {
+      ...size,
+      fonts: [
+        {
+          name: "Instrument Serif",
+          data: displayFont,
+          weight: 400,
+          style: "normal",
+        },
+      ],
+    },
   );
 }
