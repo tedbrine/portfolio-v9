@@ -150,12 +150,18 @@
     color-mix(in oklab, var(--ad-brand-colour) 55%, #21100d) 56%,
     var(--ad-brand-colour) 100%
   );
-  mask-image: radial-gradient(circle, #000 1.1px, transparent 1.2px);
+  mask-image: radial-gradient(circle at 50% 50%, #000 1.2px, transparent 1.3px);
   mask-size: 7px 7px;
   mask-repeat: repeat;
-  -webkit-mask-image: radial-gradient(circle, #000 1.1px, transparent 1.2px);
+  mask-position: 0 0;
+  -webkit-mask-image: radial-gradient(
+    circle at 50% 50%,
+    #000 1.2px,
+    transparent 1.3px
+  );
   -webkit-mask-size: 7px 7px;
   -webkit-mask-repeat: repeat;
+  -webkit-mask-position: 0 0;
   transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -170,10 +176,12 @@
 
 .ad-banner-accent-dot {
   position: absolute;
-  width: 2.2px;
-  height: 2.2px;
+  width: 2.4px;
+  height: 2.4px;
   border-radius: 50%;
   background-color: var(--ad-brand-colour);
+  clip-path: circle(50%);
+  transform: translate(-50%, -50%);
 }
 
 .ad-banner-accent-dot.is-lighter {
