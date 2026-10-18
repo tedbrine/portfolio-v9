@@ -10,15 +10,22 @@ const AD_ACCENT_DOTS = (() => {
     seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
     return seed / 0x1_0000_0000;
   };
+  const occupiedPositions = new Set<number>();
 
-  return Array.from({ length: 28 }, (_, id) => {
+  return Array.from({ length: 56 }, (_, id) => {
+    let position = Math.floor(random() * 150 * 9);
+    while (occupiedPositions.has(position)) {
+      position = Math.floor(random() * 150 * 9);
+    }
+    occupiedPositions.add(position);
+
     return {
       id,
-      x: Math.floor(random() * 150),
-      y: Math.floor(random() * 9),
+      x: position % 150,
+      y: Math.floor(position / 150),
       lighter: random() < 0.14,
-      duration: 5 + random() * 3,
-      delay: random() * 9,
+      duration: 8 + random() * 4,
+      delay: random() * 12,
     };
   });
 })();
