@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { site } from "@/lib/site";
 
@@ -5,87 +7,105 @@ export const alt = `${site.name.full} — ${site.title}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+export default async function Image() {
+  const photoData = await readFile(
+    join(process.cwd(), "public/opengraph-photo.jpg"),
+    "base64",
+  );
+  const photoSource = `data:image/jpeg;base64,${photoData}`;
+
   return new ImageResponse(
     <div
       style={{
         width: "100%",
         height: "100%",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        background: "#1c1c1f",
-        color: "#fafafa",
-        padding: "72px",
+        background: "#f3f0e8",
+        color: "#202923",
         fontFamily: "ui-sans-serif, system-ui, sans-serif",
       }}
     >
       <div
         style={{
+          width: "690px",
+          flexShrink: 0,
+          height: "100%",
           display: "flex",
-          alignItems: "center",
-          gap: "24px",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          padding: "66px 54px 48px 76px",
         }}
       >
-        <div
-          style={{
-            width: "96px",
-            height: "96px",
-            borderRadius: "20px",
-            background: "rgba(255,255,255,0.08)",
-            border: "1px solid rgba(255,255,255,0.12)",
-          }}
-        />
-        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{
+              fontSize: 70,
+              fontWeight: 700,
+              letterSpacing: "-0.055em",
+              fontFamily: "ui-monospace, monospace",
+              lineHeight: 1.08,
+            }}
+          >
+            {site.name.full}
+          </div>
+          <div
+            style={{
+              marginTop: "12px",
+              fontSize: 26,
+              color: "#69736b",
+            }}
+          >
+            {site.title}
+          </div>
+          <div
+            style={{
+              width: "48px",
+              height: "3px",
+              marginTop: "34px",
+              marginBottom: "24px",
+              background: "#b66f4c",
+            }}
+          />
+          <div
+            style={{
+              maxWidth: "500px",
+              fontSize: 29,
+              lineHeight: 1.38,
+              color: "#303a33",
+            }}
+          >
+            {site.seo.tagline}
+          </div>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ height: "1px", background: "#d7d4cb" }} />
           <div
             style={{
               display: "flex",
-              fontSize: 64,
-              fontWeight: 800,
-              letterSpacing: "-0.04em",
-              fontFamily: "ui-monospace, monospace",
+              justifyContent: "space-between",
+              fontSize: 18,
+              color: "#68726a",
             }}
           >
-            <span>{site.name.first}</span>
-            <span
-              style={{
-                color: "rgba(250,250,250,0.55)",
-                fontWeight: 500,
-                marginLeft: "16px",
-              }}
-            >
-              {site.name.last}
-            </span>
-          </div>
-          <div style={{ fontSize: 28, color: "rgba(250,250,250,0.55)" }}>
-            {site.title}
+            <span>{site.location.label}</span>
+            <span>{site.url.replace("https://", "").replace(/\/$/, "")}</span>
           </div>
         </div>
       </div>
 
-      <div
+      {/* biome-ignore lint/performance/noImgElement: ImageResponse uses img to render embedded assets */}
+      <img
+        alt=""
+        src={photoSource}
         style={{
-          fontSize: 30,
-          lineHeight: 1.45,
-          color: "rgba(250,250,250,0.72)",
-          maxWidth: "900px",
+          width: "510px",
+          height: "630px",
+          flexShrink: 0,
+          objectFit: "cover",
+          objectPosition: "center",
         }}
-      >
-        {site.seo.tagline}
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          fontSize: 22,
-          color: "rgba(250,250,250,0.45)",
-        }}
-      >
-        <span>{site.location.label}</span>
-        <span>{site.url.replace("https://", "")}</span>
-      </div>
+      />
     </div>,
     { ...size },
   );
