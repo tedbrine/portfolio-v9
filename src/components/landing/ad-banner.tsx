@@ -138,10 +138,7 @@ export const AdBanner = async () => {
         </div>
 
         <div className="relative flex flex-col items-center gap-2 text-center sm:grid sm:grid-cols-[minmax(0,1fr)_minmax(0,3fr)_minmax(0,1fr)] sm:items-center sm:gap-6">
-          <div className="flex flex-col items-center gap-0 sm:items-start">
-            <span className="hidden font-medium text-[9px] text-white/55 uppercase leading-none tracking-[0.16em] sm:inline">
-              Sponsored
-            </span>
+          <div className="flex justify-center sm:justify-start">
             <Image
               src={ad.brand.logo}
               alt={ad.brand.name}
