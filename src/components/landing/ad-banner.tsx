@@ -12,7 +12,7 @@ const AD_ACCENT_DOTS = (() => {
   };
   const occupiedPositions = new Set<number>();
 
-  return Array.from({ length: 56 }, (_, id) => {
+  return Array.from({ length: 112 }, (_, id) => {
     let position = Math.floor(random() * 150 * 9);
     while (occupiedPositions.has(position)) {
       position = Math.floor(random() * 150 * 9);
