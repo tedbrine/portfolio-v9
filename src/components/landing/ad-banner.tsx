@@ -107,7 +107,7 @@ export const AdBanner = async () => {
         href={ad.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="ad-banner-link relative block overflow-hidden px-4 py-2.5 sm:px-6 sm:py-5 md:py-6"
+        className="ad-banner-link relative block overflow-hidden px-4 py-4 sm:px-6 sm:py-5 md:py-6"
         style={{ "--ad-brand-colour": ad.brand.colour } as CSSProperties}
       >
         <div
