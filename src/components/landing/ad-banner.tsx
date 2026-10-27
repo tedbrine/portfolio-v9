@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import type { CSSProperties } from "react";
+import { AdBannerHoverDots } from "@/components/landing/ad-banner-hover-dots";
 import { ContentBox } from "@/components/layout/shell";
 
 const PRIORITY_AD_URL = "https://api.ads.i.els.re/api/ads/priority";
@@ -116,6 +117,7 @@ export const AdBanner = async () => {
         >
           <div className="ad-banner-pattern-field">
             <div className="ad-banner-pattern" />
+            <AdBannerHoverDots />
             <div className="ad-banner-pattern-mid">
               {AD_ACCENT_DOTS.map((dot) => (
                 <span
