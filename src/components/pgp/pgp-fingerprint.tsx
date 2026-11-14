@@ -1,16 +1,14 @@
 import { Loader2, TriangleAlert } from "lucide-react";
+import { connection } from "next/server";
 import { Suspense } from "react";
 import { CodeBlock } from "@/components/content/prose";
-
-const FINGERPRINT_URL =
-  "https://openpgpkey.ted.ac/.well-known/openpgpkey/ted.ac/hu/aeii9rmagouy1owpp7e5ftpxjof7h41n.fingerprint";
+import { getPgpFingerprint } from "@/lib/pgp/fingerprint";
 
 const FingerprintContent = async () => {
-  const res = await fetch(FINGERPRINT_URL, {
-    next: { revalidate: 60 * 60 },
-  });
+  await connection();
+  const data = await getPgpFingerprint();
 
-  if (!res.ok) {
+  if (!data) {
     return (
       <div className="flex items-center gap-2 text-muted-foreground text-sm">
         <TriangleAlert className="size-4" />
@@ -18,8 +16,6 @@ const FingerprintContent = async () => {
       </div>
     );
   }
-
-  const data = await res.text();
 
   return <CodeBlock>{data}</CodeBlock>;
 };
